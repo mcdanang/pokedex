@@ -10,7 +10,7 @@ export default function Loading() {
 			}
 		>
 			<div className="animate-spin">
-				<Pokeball className="w-20 h-20 fill-red-400" />
+				<Pokeball className="size-40 fill-red-400" />
 			</div>
 			<p className="text-lg font-medium">Loading...</p>
 		</div>

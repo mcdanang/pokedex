@@ -20,7 +20,7 @@ export default async function PokemonDetailPage({ params }: { params: Promise<{ 
 	const bgColor = colorMap[species.color.name] || "bg-gray-200";
 
 	return (
-		<div className={cn("flex flex-col mx-auto pt-8 min-h-svh text-white", bgColor)}>
+		<div className={cn("flex flex-col mx-auto pt-8 min-h-svh text-white overflow-hidden", bgColor)}>
 			<div className="absolute -left-16 -top-16 bg-white/10 size-40 rounded-4xl -rotate-12"></div>
 
 			<div className="xl:w-7xl mx-auto w-full min-h-svh flex flex-col">
