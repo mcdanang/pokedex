@@ -26,7 +26,7 @@ export default function Home() {
 	if (isLoading) return <LoadingComponent className="h-screen" />;
 
 	return (
-		<main className="p-6 md:p-10 relative space-y-6 max-w-7xl mx-auto">
+		<main className="p-6 md:p-10 relative space-y-6 max-w-7xl mx-auto overflow-hidden xl:overflow-visible">
 			<Pokeball className="absolute -top-20 -right-24 fill-gray-100 -z-20" size={300} />
 			<Navbar />
 			<h1 className="text-4xl font-black">Pokédex</h1>
