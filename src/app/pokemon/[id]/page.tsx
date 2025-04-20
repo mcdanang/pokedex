@@ -7,10 +7,11 @@ import PokemonDetailTabs from "@/components/pokemon/tabs";
 import { EvolutionChainResponse } from "@/types/pokemon";
 import { getEvolutionDataFromChain } from "@/lib/evolution";
 
-export default async function PokemonDetailPage({ params }: { params: { id: string } }) {
+export default async function PokemonDetailPage({ params }: { params: Promise<{ id: string }> }) {
 	const { id } = await params;
-	const pokemon = await fetchPokemonData(id);
-	const species = await fetchSpeciesData(id);
+
+	const [pokemon, species] = await Promise.all([fetchPokemonData(id), fetchSpeciesData(id)]);
+
 	const evolutionChain: EvolutionChainResponse = await fetchEvolutionChain(
 		species.evolution_chain.url
 	);
